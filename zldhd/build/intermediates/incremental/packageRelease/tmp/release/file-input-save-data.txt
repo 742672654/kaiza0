@@ -1,0 +1,27 @@
+#Internal package file, do not edit.
+#Mon Feb 25 10:45:02 CST 2019
+2.base=F\:\\parkingos_android\\zldhd\\build\\intermediates\\transforms\\stripDebugSymbol\\release\\0
+5.set=NATIVE_RESOURCE
+0.path=app_icon.png
+2.baseType=DIRECTORY
+3.base=F\:\\parkingos_android\\zldhd\\build\\intermediates\\merged_assets\\release\\mergeReleaseAssets\\out
+2.set=NATIVE_RESOURCE
+1.path=ShareSDK.xml
+4.base=F\:\\parkingos_android\\zldhd\\build\\intermediates\\dex\\release\\mergeDexRelease\\out
+count=6
+5.baseType=DIRECTORY
+2.path=lib/armeabi/libYITIJI.so
+5.base=F\:\\parkingos_android\\zldhd\\build\\intermediates\\transforms\\stripDebugSymbol\\release\\0
+4.set=DEX
+3.path=Font/Roboto/Roboto-Black.ttf
+3.baseType=DIRECTORY
+1.set=ASSET
+4.path=classes.dex
+1.baseType=DIRECTORY
+5.path=lib/armeabi-v7a/libYITIJI.so
+0.base=F\:\\parkingos_android\\zldhd\\build\\intermediates\\merged_assets\\release\\mergeReleaseAssets\\out
+0.baseType=DIRECTORY
+3.set=ASSET
+1.base=F\:\\parkingos_android\\zldhd\\build\\intermediates\\merged_assets\\release\\mergeReleaseAssets\\out
+4.baseType=DIRECTORY
+0.set=ASSET

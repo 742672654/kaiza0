@@ -1,0 +1,251 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:2:1-77:12
+INJECTED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:2:1-77:12
+INJECTED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:2:1-77:12
+INJECTED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:2:1-77:12
+MERGED from [:library] E:\AndroidCLASS\kaiza\library\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-14:12
+MERGED from [com.android.support:appcompat-v7:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.0.1.aar\08350899557d319704dd33a0fe409b95\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-v4:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\support-v4-25.0.1.aar\d8c2328a19704c015734db15cb51769c\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:animated-vector-drawable:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.0.1.aar\b56b2ea09bac105a743ce95f6c5210de\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:support-vector-drawable:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.0.1.aar\1ef644a9703310188b33300f75c1d0de\AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:support-fragment:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\support-fragment-25.0.1.aar\b3041bae004c9b12ac9d2bc74e88be97\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-media-compat:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.0.1.aar\50a995256096ac2a85d3271aeedc482a\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-core-utils:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.0.1.aar\aa5d421ca03cf40ef1594ee423ed58c4\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-core-ui:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.0.1.aar\b3dd1508bfcddf2d77c317dd6df4b81a\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-compat:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\support-compat-25.0.1.aar\45cb569cf2ddf40dcf5cb5ffc0b43a71\AndroidManifest.xml:17:1-27:12
+INJECTED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:2:1-77:12
+INJECTED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:2:1-77:12
+INJECTED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:2:1-77:12
+	package
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:3:5-22
+		INJECTED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml
+		INJECTED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml
+	android:versionName
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:5:5-32
+		INJECTED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml
+		INJECTED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:2:11-69
+	android:versionCode
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:4:5-30
+		INJECTED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml
+		INJECTED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml
+supports-screens
+ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:9:5-13:39
+	android:largeScreens
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:11:9-36
+	android:smallScreens
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:13:9-36
+	android:normalScreens
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:12:9-37
+	android:anyDensity
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:10:9-34
+uses-feature#android.hardware.bluetooth_le
+ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:15:5-17:35
+	android:required
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:17:9-32
+	android:name
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:16:9-53
+uses-permission#android.permission.BLUETOOTH
+ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:19:5-68
+	android:name
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:19:22-65
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:20:5-74
+	android:name
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:20:22-71
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:21:5-80
+	android:name
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:21:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:22:5-81
+	android:name
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:22:22-78
+uses-permission#android.permission.MOUNT_UNMOUNT_FILESYSTEMS
+ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:23:5-84
+	android:name
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:23:22-81
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:24:5-81
+	android:name
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:24:22-78
+uses-permission#android.permission.NFC
+ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:25:5-62
+	android:name
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:25:22-59
+uses-permission#android.permission.CALL_PHONE
+ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:26:5-69
+	android:name
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:26:22-66
+uses-permission#android.permission.GET_TASKS
+ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:27:5-68
+	android:name
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:27:22-65
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:29:5-81
+	android:name
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:29:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:31:5-79
+	android:name
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:31:22-76
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:33:5-79
+	android:name
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:33:22-76
+uses-permission#android.permission.CHANGE_WIFI_STATE
+ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:35:5-76
+	android:name
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:35:22-73
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:37:5-75
+	android:name
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:37:22-72
+uses-permission#android.permission.INTERNET
+ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:41:5-67
+	android:name
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:41:22-64
+uses-permission#android.permission.READ_LOGS
+ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:43:5-68
+	android:name
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:43:22-65
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:44:5-76
+	android:name
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:44:22-73
+uses-permission#android.permission.WRITE_SETTINGS
+ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:45:5-73
+	android:name
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:45:22-70
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:46:5-71
+	android:name
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:46:22-68
+uses-permission#android.permission.CHANGE_NETWORK_STATE
+ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:47:5-79
+	android:name
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:47:22-76
+uses-permission#android.permission.CAMERA
+ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:48:5-65
+	android:name
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:48:22-62
+uses-permission#android.permission.FLASHLIGHT
+ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:49:5-69
+	android:name
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:49:22-66
+uses-permission#android.permission.VIBRATE
+ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:50:5-66
+	android:name
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:50:22-63
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:51:5-78
+	android:name
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:51:22-75
+uses-permission#android.permission.MANAGE_ACCOUNTS
+ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:54:5-74
+	android:name
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:54:22-71
+uses-permission#android.permission.GET_ACCOUNTS
+ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:55:5-71
+MERGED from [:library] E:\AndroidCLASS\kaiza\library\build\intermediates\library_manifest\debug\AndroidManifest.xml:10:5-71
+MERGED from [:library] E:\AndroidCLASS\kaiza\library\build\intermediates\library_manifest\debug\AndroidManifest.xml:10:5-71
+	android:name
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:55:22-68
+uses-feature#android.hardware.camera
+ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:57:5-60
+	android:name
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:57:19-57
+uses-feature#android.hardware.camera.autofocus
+ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:58:5-70
+	android:name
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:58:19-67
+application
+ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:60:5-75:19
+MERGED from [com.android.support:appcompat-v7:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.0.1.aar\08350899557d319704dd33a0fe409b95\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:appcompat-v7:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.0.1.aar\08350899557d319704dd33a0fe409b95\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\support-v4-25.0.1.aar\d8c2328a19704c015734db15cb51769c\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\support-v4-25.0.1.aar\d8c2328a19704c015734db15cb51769c\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.0.1.aar\b56b2ea09bac105a743ce95f6c5210de\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.0.1.aar\b56b2ea09bac105a743ce95f6c5210de\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.0.1.aar\1ef644a9703310188b33300f75c1d0de\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-vector-drawable:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.0.1.aar\1ef644a9703310188b33300f75c1d0de\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-fragment:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\support-fragment-25.0.1.aar\b3041bae004c9b12ac9d2bc74e88be97\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\support-fragment-25.0.1.aar\b3041bae004c9b12ac9d2bc74e88be97\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.0.1.aar\50a995256096ac2a85d3271aeedc482a\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.0.1.aar\50a995256096ac2a85d3271aeedc482a\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.0.1.aar\aa5d421ca03cf40ef1594ee423ed58c4\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.0.1.aar\aa5d421ca03cf40ef1594ee423ed58c4\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.0.1.aar\b3dd1508bfcddf2d77c317dd6df4b81a\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.0.1.aar\b3dd1508bfcddf2d77c317dd6df4b81a\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\support-compat-25.0.1.aar\45cb569cf2ddf40dcf5cb5ffc0b43a71\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\support-compat-25.0.1.aar\45cb569cf2ddf40dcf5cb5ffc0b43a71\AndroidManifest.xml:25:5-20
+	android:label
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:64:9-41
+	android:icon
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:63:9-42
+	android:allowBackup
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:62:9-35
+	android:theme
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:65:9-40
+	android:name
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:61:9-43
+activity#com.gongnen.RelativeLayoutActicity
+ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:66:9-72:20
+	android:name
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:66:19-68
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:67:13-71:29
+action#android.intent.action.MAIN
+ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:68:17-69
+	android:name
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:68:25-66
+category#android.intent.category.LAUNCHER
+ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:70:17-77
+	android:name
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml:70:27-74
+uses-sdk
+INJECTED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml
+INJECTED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml
+MERGED from [:library] E:\AndroidCLASS\kaiza\library\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:library] E:\AndroidCLASS\kaiza\library\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.0.1.aar\08350899557d319704dd33a0fe409b95\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.0.1.aar\08350899557d319704dd33a0fe409b95\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-v4:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\support-v4-25.0.1.aar\d8c2328a19704c015734db15cb51769c\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\support-v4-25.0.1.aar\d8c2328a19704c015734db15cb51769c\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:animated-vector-drawable:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.0.1.aar\b56b2ea09bac105a743ce95f6c5210de\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.0.1.aar\b56b2ea09bac105a743ce95f6c5210de\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.0.1.aar\1ef644a9703310188b33300f75c1d0de\AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:support-vector-drawable:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.0.1.aar\1ef644a9703310188b33300f75c1d0de\AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:support-fragment:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\support-fragment-25.0.1.aar\b3041bae004c9b12ac9d2bc74e88be97\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-fragment:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\support-fragment-25.0.1.aar\b3041bae004c9b12ac9d2bc74e88be97\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.0.1.aar\50a995256096ac2a85d3271aeedc482a\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.0.1.aar\50a995256096ac2a85d3271aeedc482a\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-utils:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.0.1.aar\aa5d421ca03cf40ef1594ee423ed58c4\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-utils:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.0.1.aar\aa5d421ca03cf40ef1594ee423ed58c4\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-ui:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.0.1.aar\b3dd1508bfcddf2d77c317dd6df4b81a\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.0.1.aar\b3dd1508bfcddf2d77c317dd6df4b81a\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\support-compat-25.0.1.aar\45cb569cf2ddf40dcf5cb5ffc0b43a71\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\support-compat-25.0.1.aar\45cb569cf2ddf40dcf5cb5ffc0b43a71\AndroidManifest.xml:21:5-23:58
+INJECTED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml
+INJECTED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml
+	tools:overrideLibrary
+		ADDED from [com.android.support:appcompat-v7:25.0.1] C:\Users\xiaoduo\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.0.1.aar\08350899557d319704dd33a0fe409b95\AndroidManifest.xml:23:9-75
+	android:targetSdkVersion
+		INJECTED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml
+		INJECTED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml
+		ADDED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml
+		INJECTED from E:\AndroidCLASS\kaiza\zldhd\src\main\AndroidManifest.xml
+uses-permission#android.permission.READ_PROFILE
+ADDED from [:library] E:\AndroidCLASS\kaiza\library\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-71
+	android:name
+		ADDED from [:library] E:\AndroidCLASS\kaiza\library\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:22-68
+uses-permission#android.permission.READ_CONTACTS
+ADDED from [:library] E:\AndroidCLASS\kaiza\library\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-72
+	android:name
+		ADDED from [:library] E:\AndroidCLASS\kaiza\library\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:22-69

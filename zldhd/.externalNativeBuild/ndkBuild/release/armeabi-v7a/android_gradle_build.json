@@ -1,0 +1,37 @@
+{
+  "buildFiles": [
+    "E:\\AndroidCLASS\\kaiza\\zldhd\\src\\main\\jni\\Android.mk",
+    "E:\\AndroidCLASS\\kaiza\\zldhd\\src\\main\\jni\\Application.mk"
+  ],
+  "cleanCommands": [
+    "E:\\android-sdk_r23-windows\\ndk-bundle\\ndk-build.cmd NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003dE:\\AndroidCLASS\\kaiza\\zldhd\\src\\main\\jni\\Android.mk NDK_APPLICATION_MK\u003dE:\\AndroidCLASS\\kaiza\\zldhd\\src\\main\\jni\\Application.mk APP_ABI\u003darmeabi-v7a NDK_ALL_ABIS\u003darmeabi-v7a NDK_DEBUG\u003d0 APP_PLATFORM\u003dandroid-16 NDK_OUT\u003dE:/AndroidCLASS/kaiza/zldhd/build/intermediates/ndkBuild/release/obj NDK_LIBS_OUT\u003dE:\\AndroidCLASS\\kaiza\\zldhd\\build\\intermediates\\ndkBuild\\release\\lib NDK_DEBUG\u003d0 clean"
+  ],
+  "libraries": {
+    "YITIJI-release-armeabi-v7a": {
+      "buildCommand": "E:\\android-sdk_r23-windows\\ndk-bundle\\ndk-build.cmd NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003dE:\\AndroidCLASS\\kaiza\\zldhd\\src\\main\\jni\\Android.mk NDK_APPLICATION_MK\u003dE:\\AndroidCLASS\\kaiza\\zldhd\\src\\main\\jni\\Application.mk APP_ABI\u003darmeabi-v7a NDK_ALL_ABIS\u003darmeabi-v7a NDK_DEBUG\u003d0 APP_PLATFORM\u003dandroid-16 NDK_OUT\u003dE:/AndroidCLASS/kaiza/zldhd/build/intermediates/ndkBuild/release/obj NDK_LIBS_OUT\u003dE:\\AndroidCLASS\\kaiza\\zldhd\\build\\intermediates\\ndkBuild\\release\\lib NDK_DEBUG\u003d0 E:/AndroidCLASS/kaiza/zldhd/build/intermediates/ndkBuild/release/obj/local/armeabi-v7a/libYITIJI.so",
+      "toolchain": "toolchain-armeabi-v7a",
+      "abi": "armeabi-v7a",
+      "artifactName": "YITIJI",
+      "files": [
+        {
+          "src": "E:\\AndroidCLASS\\kaiza\\zldhd\\src\\main\\jni\\tcpclient.c",
+          "flags": "-target armv7-none-linux-androideabi16 -fdata-sections -ffunction-sections -fstack-protector-strong -funwind-tables -no-canonical-prefixes --sysroot E:/android-sdk_r23-windows/ndk-bundle/build//../toolchains/llvm/prebuilt/windows-x86_64/sysroot -g -Wno-invalid-command-line-argument -Wno-unused-command-line-argument -fno-addrsig -fpic -mfpu\u003dvfpv3-d16 -mthumb -Oz -DNDEBUG -IE:/AndroidCLASS/kaiza/zldhd/src/main/jni -O3 -DRUN_IN_ANDROID -DANDROID -Wa,--noexecstack -Wformat -Werror\u003dformat-security"
+        },
+        {
+          "src": "E:\\AndroidCLASS\\kaiza\\zldhd\\src\\main\\jni\\yitiji.c",
+          "flags": "-target armv7-none-linux-androideabi16 -fdata-sections -ffunction-sections -fstack-protector-strong -funwind-tables -no-canonical-prefixes --sysroot E:/android-sdk_r23-windows/ndk-bundle/build//../toolchains/llvm/prebuilt/windows-x86_64/sysroot -g -Wno-invalid-command-line-argument -Wno-unused-command-line-argument -fno-addrsig -fpic -mfpu\u003dvfpv3-d16 -mthumb -Oz -DNDEBUG -IE:/AndroidCLASS/kaiza/zldhd/src/main/jni -O3 -DRUN_IN_ANDROID -DANDROID -Wa,--noexecstack -Wformat -Werror\u003dformat-security"
+        }
+      ],
+      "output": "E:\\AndroidCLASS\\kaiza\\zldhd\\build\\intermediates\\ndkBuild\\release\\obj\\local\\armeabi-v7a\\libYITIJI.so"
+    }
+  },
+  "toolchains": {
+    "toolchain-armeabi-v7a": {
+      "cCompilerExecutable": "E:\\android-sdk_r23-windows\\ndk-bundle\\build\\..\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe"
+    }
+  },
+  "cFileExtensions": [
+    "c"
+  ],
+  "cppFileExtensions": []
+}

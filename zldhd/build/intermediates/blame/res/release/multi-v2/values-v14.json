@@ -1,0 +1,28 @@
+{
+    "logs": [
+        {
+            "outputFile": "F:\\parkingos_android\\zldhd\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-v14\\values-v14.xml",
+            "map": [
+                {
+                    "source": "F:\\parkingos_android\\zldhd\\src\\main\\res\\values-v14\\styles.xml",
+                    "from": {
+                        "startLines": "10",
+                        "startColumns": "0",
+                        "startOffsets": "367",
+                        "endLines": "11",
+                        "endColumns": "8",
+                        "endOffsets": "456"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "3",
+                        "endColumns": "8",
+                        "endOffsets": "144"
+                    }
+                }
+            ]
+        }
+    ]
+}

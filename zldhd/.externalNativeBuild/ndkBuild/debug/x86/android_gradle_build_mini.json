@@ -1,0 +1,17 @@
+{
+  "buildFiles": [
+    "E:\\AndroidCLASS\\kaiza\\zldhd\\src\\main\\jni\\Android.mk",
+    "E:\\AndroidCLASS\\kaiza\\zldhd\\src\\main\\jni\\Application.mk"
+  ],
+  "cleanCommands": [
+    "E:\\android-sdk_r23-windows\\ndk-bundle\\ndk-build.cmd NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003dE:\\AndroidCLASS\\kaiza\\zldhd\\src\\main\\jni\\Android.mk NDK_APPLICATION_MK\u003dE:\\AndroidCLASS\\kaiza\\zldhd\\src\\main\\jni\\Application.mk APP_ABI\u003dx86 NDK_ALL_ABIS\u003dx86 NDK_DEBUG\u003d1 APP_PLATFORM\u003dandroid-16 NDK_OUT\u003dE:/AndroidCLASS/kaiza/zldhd/build/intermediates/ndkBuild/debug/obj NDK_LIBS_OUT\u003dE:\\AndroidCLASS\\kaiza\\zldhd\\build\\intermediates\\ndkBuild\\debug\\lib NDK_DEBUG\u003d1 clean"
+  ],
+  "libraries": {
+    "YITIJI-debug-x86": {
+      "artifactName": "YITIJI",
+      "buildCommand": "E:\\android-sdk_r23-windows\\ndk-bundle\\ndk-build.cmd NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003dE:\\AndroidCLASS\\kaiza\\zldhd\\src\\main\\jni\\Android.mk NDK_APPLICATION_MK\u003dE:\\AndroidCLASS\\kaiza\\zldhd\\src\\main\\jni\\Application.mk APP_ABI\u003dx86 NDK_ALL_ABIS\u003dx86 NDK_DEBUG\u003d1 APP_PLATFORM\u003dandroid-16 NDK_OUT\u003dE:/AndroidCLASS/kaiza/zldhd/build/intermediates/ndkBuild/debug/obj NDK_LIBS_OUT\u003dE:\\AndroidCLASS\\kaiza\\zldhd\\build\\intermediates\\ndkBuild\\debug\\lib NDK_DEBUG\u003d1 E:/AndroidCLASS/kaiza/zldhd/build/intermediates/ndkBuild/debug/obj/local/x86/libYITIJI.so",
+      "abi": "x86",
+      "output": "E:\\AndroidCLASS\\kaiza\\zldhd\\build\\intermediates\\ndkBuild\\debug\\obj\\local\\x86\\libYITIJI.so"
+    }
+  }
+}

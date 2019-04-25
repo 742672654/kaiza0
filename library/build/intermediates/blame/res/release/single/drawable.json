@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "E:\\AndroidCLASS\\zldhb_car\\library\\build\\intermediates\\res\\merged\\release\\drawable\\indicator_bg_top.xml",
+        "source": "E:\\AndroidCLASS\\zldhb_car\\library\\src\\main\\res\\drawable\\indicator_bg_top.xml"
+    },
+    {
+        "merged": "E:\\AndroidCLASS\\zldhb_car\\library\\build\\intermediates\\res\\merged\\release\\drawable\\ptr_animation.xml",
+        "source": "E:\\AndroidCLASS\\zldhb_car\\library\\src\\main\\res\\drawable\\ptr_animation.xml"
+    },
+    {
+        "merged": "E:\\AndroidCLASS\\zldhb_car\\library\\build\\intermediates\\res\\merged\\release\\drawable\\indicator_bg_bottom.xml",
+        "source": "E:\\AndroidCLASS\\zldhb_car\\library\\src\\main\\res\\drawable\\indicator_bg_bottom.xml"
+    }
+]
