@@ -1,6 +1,8 @@
 package com.gongnen;
 
 import android.util.Log;
+
+import com.gongnen.http.HttpURLConnectionUtil;
 import com.zld.bean.AppInfo;
 import com.zld.lib.constant.Constant;
 import org.json.JSONObject;

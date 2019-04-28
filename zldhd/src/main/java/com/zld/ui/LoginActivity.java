@@ -56,6 +56,7 @@ import com.zld.db.SqliteManager;
 import com.zld.engine.LoginInfoParser;
 import com.zld.lib.constant.Constant;
 import com.zld.lib.dialog.DialogManager;
+import com.zld.lib.http.HttpCallBack;
 import com.zld.lib.http.HttpManager;
 import com.zld.lib.http.RequestParams;
 import com.zld.lib.util.FileUtil;
@@ -75,17 +76,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class LoginActivity extends BaseActivity {
+public class LoginActivity extends BaseActivity implements HttpCallBack {
 
     private static final String TAG = "LoginActivity";
     private Button bt_login;
-    private ImageView iv_droplist;
     private TextView tv_version_name;
     private TextView et_ip;
-//    private ArrayList<String> accounts;
     private ProgressDialog dialog;
     private EditText et_login_password;
-//    final static String regularEx = "|";
     private AutoCompleteTextView at_login_username;
     private Set<String> users = new HashSet<String>();
 
@@ -93,50 +91,46 @@ public class LoginActivity extends BaseActivity {
     private ListView listview;
     private PopupWindow popupWindow;
     private SqliteManager sqliteManager;
-    @SuppressWarnings("unused")
     private String username;
-    @SuppressWarnings("unused")
     private String password;
-    @SuppressWarnings("unused")
     private LoginInfo info;
-    // private ImageLoader imageLoader;
+
 
     public void onCreate(Bundle savedInstanceState) {
-        // TODO Auto-generated method stub
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_activity);
-        IsNetWork.IsHaveInternet(LoginActivity.this);
-        Intent intent = initStallUri();
-//		((application) getApplication()).setLoginActivity(this);
+
+
+        //添加数据库操作对象
         initSqliteManager();
+
+        //注册按钮
         initView();
+
+        //登录点击事件
         setView();
+
+        //显示进度条对话框
         initDialog();
-        tokenOperation(intent);
+
     }
 
-    boolean isLogin = false;
 
-    private Intent initStallUri() {
-        Intent intent = getIntent();
-        Bundle bundle = intent.getExtras();
-        if (bundle != null) {
-            uri = bundle.getParcelable("installUri");
+    // TODO 监听键盘Enter键
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        switch (event.getKeyCode()) {
+            case KeyEvent.KEYCODE_ENTER: loginOperation();break;
+            default: break;
         }
-        return intent;
+        return super.onKeyDown(keyCode, event);
     }
 
-    private void tokenOperation(Intent intent) {
-        Log.e(TAG, "获取到token");
-        String token = intent.getStringExtra("token");
-        if (token != null && token.equals("false")) {
-            showToast("你的账号或者工作站在别处登录，请修改密码确保安全！");
-        } else {
-            getAutoLoginInfo();
+    private void initSqliteManager() {
+        if (sqliteManager == null) {
+            sqliteManager = ((application) getApplication()).getSqliteManager(LoginActivity.this);
         }
     }
+
 
     private void initDialog() {
         if (dialog == null) {
@@ -145,29 +139,13 @@ public class LoginActivity extends BaseActivity {
         }
     }
 
-    private void initSqliteManager() {
-        if (sqliteManager == null) {
-//            sqliteManager = new SqliteManager(LoginActivity.this);
-//            sqliteManager = ((application)getApplication()).getSqliteManager();
-            sqliteManager = ((application) getApplication()).getSqliteManager(LoginActivity.this);
-        }
-    }
 
-    /**
-     * 获取登录信息
-     */
-    public void getAutoLoginInfo() {
-        SharedPreferences autologin = getSharedPreferences("autologin", Context.MODE_PRIVATE);
-        if (!(autologin.getString("account", "").equals("") && autologin.getString("password", "").equals(""))) {
-            String username = autologin.getString("account", "");
-            String password = autologin.getString("passwd", "");
-            autologin(username, password);
-        }
-    }
+
+
+
 
     /**
      * 自动登录
-     *
      */
     private void autologin(String username, String password) {
         FileUtil.writeSDFile("登录步骤","自动登录  是否是本地服务器："+AppInfo.getInstance().getIsLocalServer(LoginActivity.this));
@@ -191,13 +169,6 @@ public class LoginActivity extends BaseActivity {
                 if (uri != null) {
                     Instanll(uri);
                 } else {
-                    /* 为本地化时间准一点，需设置网络时间 */
-//					ContentResolver cv = LoginActivity.this.getContentResolver();
-//					String isAutoTime = android.provider.Settings.System.getString(cv, Global.AUTO_TIME);
-//					if (Constant.sZero.equals(isAutoTime)) {// 1=yes, 0=no
-//						ShowDialog.showSetTimeDialog(LoginActivity.this);
-//						return;
-//					}
                     longinSuccess(username, md5password, password, users);
                 }
             } catch (Exception e) {
@@ -213,30 +184,13 @@ public class LoginActivity extends BaseActivity {
         et_login_password = (EditText) findViewById(R.id.et_login_password);
         tv_version_name = (TextView) findViewById(R.id.tv_version_name);
         bt_login = (Button) findViewById(R.id.bt_longin_login);
-        iv_droplist = (ImageView) findViewById(R.id.iv_droplist);
-        et_ip = (TextView) findViewById(R.id.et_ip);
 
-        tv_version_name.setText("当前版本：V" + getVersions());
-        SharedPreferences prefs = getSharedPreferences("usernames", Context.MODE_PRIVATE);
-        users = SharedPreferencesUtils.getStringSet(prefs, "usernames", users);
-        users.remove("");
-        ArrayList<String> accounts = new ArrayList<String>();
-        accounts.addAll(users);
-        ArrayAdapter<String> av = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, accounts);
-        at_login_username.setAdapter(av);
+
         at_login_username.setThreshold(0);
-        FileUtil.writeSDFile("登录步骤","accounts.size()="+accounts.size()+"  是否是本地服务器"+SharedPreferencesUtils.getParam(LoginActivity.this, "nettype", "isLocalServer", false)+"  localip:"+SharedPreferencesUtils.getParam(LoginActivity.this, "nettype", "localip", null));
-        if (accounts.size() > 0) {
-            at_login_username.setText(accounts.get(0));
-            // 是否是本地服务器
-            if (SharedPreferencesUtils.getParam(LoginActivity.this, "nettype", "isLocalServer", false)) {
-                String localip = SharedPreferencesUtils.getParam(LoginActivity.this, "nettype", "localip", null);
-                if (!TextUtils.isEmpty(localip)) {
-                    et_ip.setText(localip);
-                }
-            }
+        FileUtil.writeSDFile("登录步骤","  是否是本地服务器"+SharedPreferencesUtils.getParam(LoginActivity.this,
+                "nettype", "isLocalServer", false)+"  localip:"+SharedPreferencesUtils.getParam(LoginActivity.this, "nettype",
+                "localip", null));
 
-        }
         SharedPreferencesUtils.setParam(LoginActivity.this, "nettype", "linelocal", "local");
     }
 
@@ -249,19 +203,24 @@ public class LoginActivity extends BaseActivity {
                 loginOperation();
             }
         });
-        iv_droplist.setOnClickListener(new OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                showPopupWindow(at_login_username);
-            }
-        });
     }
 
     /**
      * 功能说明：登录操作
      */
     private void loginOperation() {
+
+
+        Intent intent = new Intent(LoginActivity.this, ChooseWorkstationActivity.class);
+        intent.putExtra("from", "login");
+
+        startActivity(intent);
+
+
+
+
+        if(1==1){return;}
+
         // 获取到输入的账号密码。与服务器对比；
         String username = at_login_username.getText().toString().trim();
         String password = et_login_password.getText().toString().trim();
@@ -336,7 +295,6 @@ public class LoginActivity extends BaseActivity {
         params.setUrlHeader(Constant.requestUrl + Constant.LOGIN);
         params.setUrlParams("username", username);
         params.setUrlParams("password", MD5password);
-        params.setUrlParams("version", getVersions());
         params.setUrlParams("worksite_id", worksiteId);
         String url = params.getRequstUrl();
         Log.e(TAG, "登录的URL---------------->>" + url);
@@ -344,11 +302,7 @@ public class LoginActivity extends BaseActivity {
         loginname = username;
         loginpass = password;
         if (IsNetWork.IsHaveInternet(LoginActivity.this)) {
-//			Log.e(TAG, "登录的URL---------------->>开始请求");
-//			Looper.prepare();
-//			dialog.show();
-//			Looper.loop();
-//			Log.e(TAG, "登录的URL---------------->>显示dialog");
+
             HttpManager.requestLoginGET(LoginActivity.this, url, LoginActivity.this, username, password);
         } else {
 //			Log.e(TAG, "登录的URL---------------->>发handler");
@@ -364,30 +318,7 @@ public class LoginActivity extends BaseActivity {
         }
     }
     private static String loginurl, loginname, loginpass;
-//    private Handler loginH = new Handler() {
-//        public void handleMessage(android.os.Message msg) {
-//            Log.e("---","handler 831 消息"+ (i++));
-//            if (msg.what == 831) {
-//                if (msg.obj.toString().equals("net")) {
-//                    HttpManager.requestLoginGET(LoginActivity.this, loginurl, LoginActivity.this, loginname, loginpass);
-//                } else {
-//                    Message m = new Message();
-//                    m.what = 831;
-//                    if (IsNetWork.IsHaveInternet(LoginActivity.this)) {
-//                        m.obj = "net";
-//                    } else {
-//                        m.obj = "nonet";
-//                    }
-//                    loginH.removeMessages(831);
-//                    loginH.sendMessageDelayed(m, 5000);
-//                }
-//
-//            } else if (msg.what == 832) {
-////				loginOperation();
-//            }
-//        }
-//
-//    };
+
     static int i;
     private static LoginHandler loginHandler;
     private static class LoginHandler extends Handler{
@@ -418,38 +349,24 @@ public class LoginActivity extends BaseActivity {
         }
     }
 
-    // private void loginTimeOut(final String username, final String password) {
-    // // 查询数据库中是否有账号 和密码, 有的话则跳转、无的话 提示
-    // // showToast("登录超时开启无网本地化模式");
-    // SmAccount selectAccount = sqliteManager.selectUsername(username);
-    // Log.e(TAG,"账户："+username+" selectAccount:"+selectAccount);
-    // if(selectAccount != null){
-    // Log.e(TAG,"输入的账户："+username+"=获取保存的密码："+selectAccount.getPassword()+"=输入的密码："+password);
-    // if(selectAccount.getPassword()!=null&&password.equals(selectAccount.getPassword())){
-    // String account = selectAccount.getAccount();
-    // setCominfo(username, account);
-    // }
-    // }else{
-    // showToast("本地化模式本地无此账号和密码");
-    // }
-    // }
 
     /**
      * 设置车位信息并跳转到主界面
      *
      */
     private void setCominfo(final String username, String account) {
-        if (username != null) {
-            AppInfo.getInstance().setUid(username);
-        }
+
         if (account != null) {
             SharedPreferencesUtils.setParam(LoginActivity.this, "userinfo", "name", account);
         }
+
+        if (account != null) {
+            SharedPreferencesUtils.setParam(LoginActivity.this, "userinfo", "name", account);
+        }
+
         String comid = SharedPreferencesUtils.getParam(LoginActivity.this, "zld_config", "comid", null);
         boolean passfree = SharedPreferencesUtils.getParam(LoginActivity.this, "zld_config", "passfree", true);
-        // String issuplocal = SharedPreferencesUtils.getParam(
-        // LoginActivity.this, "zld_config", "issuplocal", null);
-        // AppInfo.getInstance().setIssuplocal(issuplocal); //为1支持本地化
+
         Log.e(TAG, "comid是：" + comid);
         AppInfo.getInstance().setPassfree(passfree);
         AppInfo.getInstance().setComid(comid);
@@ -466,17 +383,7 @@ public class LoginActivity extends BaseActivity {
         }
     }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public void setInfo(LoginInfo info) {
-        this.info = info;
-    }
 
     /**
      * 登录选择
@@ -516,7 +423,7 @@ public class LoginActivity extends BaseActivity {
             spu.delete(LoginActivity.this, "set_workStation", "staname");
             Intent intent = new Intent(LoginActivity.this, ChooseWorkstationActivity.class);
             intent.putExtra("from", "login");
-            isLogin = true;
+
             startActivity(intent);
 			/* 加finish是为了不让第一次进入应用点击下班会重启 */
             finish();
@@ -535,21 +442,7 @@ public class LoginActivity extends BaseActivity {
         }
     }
 
-    /**
-     * 获取当前应用程序的版本号
-     *
-     * @return
-     */
-    private String getVersions() {
-        try {
-            PackageManager manager = getPackageManager();
-            PackageInfo info = manager.getPackageInfo(getPackageName(), 0);
-            return String.valueOf(info.versionName);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return "版本号未知";
-        }
-    }
+
 
     public void onResume() {
         super.onResume();
@@ -563,7 +456,7 @@ public class LoginActivity extends BaseActivity {
 
     @Override
     protected void onDestroy() {
-        // TODO Auto-generated method stub
+
         super.onDestroy();
         if (dialog != null) {
             dialog.dismiss();
@@ -571,9 +464,6 @@ public class LoginActivity extends BaseActivity {
         if(loginHandler!=null){
             loginHandler.removeMessages(831);
         }
-//		if(loginTime!=null){
-//			loginTime.cancel();
-//		}
     }
 
     /**
@@ -684,16 +574,6 @@ public class LoginActivity extends BaseActivity {
                 }
             }
             loginOperation();
-            // else{
-            // Log.e("linelocal", "Constant.LOGIN本地登录超时,保存状态值为Line");
-            // //本地登录超时,保存状态值为Line
-            // SharedPreferencesUtils.setParam(LoginActivity.this,"nettype",
-            // "linelocal", "line");
-            // Constant.requestUrl = "http://s.tingchebao.com/zld/";
-            // Constant.serverUrl = "http://s.tingchebao.com/mserver/";
-            // //再重新登录一次
-            // loginOperation();
-            // }
         }
         super.timeout(url);
     }
@@ -823,9 +703,6 @@ public class LoginActivity extends BaseActivity {
         }
     }
 
-    public void getLog() {
-
-    }
 
     /**
      * 从网络上获取对应订单的图片；
@@ -892,22 +769,7 @@ public class LoginActivity extends BaseActivity {
         });
     }
 
-    /**
-     * 监听键盘Enter键
-     */
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        // TODO Auto-generated method stub
-        switch (event.getKeyCode()) {
-            case KeyEvent.KEYCODE_ENTER:
-                // Enter登录
-                loginOperation();
-                break;
-            default:
-                break;
-        }
-        return super.onKeyDown(keyCode, event);
-    }
+
 
     /**
      * 安装下载后的apk文件,应该提示立即安装,下次进入安装
@@ -925,7 +787,7 @@ public class LoginActivity extends BaseActivity {
 
     private void intentInfo() {
         Intent intent = new Intent(this, ZldNewActivity.class);
-        isLogin = true;
+
         this.startActivity(intent);
         finish();
 //        AnimSlide();

@@ -10,7 +10,7 @@ import android.os.Message;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.gongnen.HttpURLConnectionUtil;
+import com.gongnen.http.HttpURLConnectionUtil;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.zld.application;
@@ -36,7 +36,6 @@ import com.zld.lib.util.VoicePlayer;
 import com.zld.photo.DecodeManager;
 import com.zld.photo.UpLoadImage;
 import com.zld.ui.ZldNewActivity;
-import com.zld.view.LineLocalRestartDialog;
 
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;

@@ -44,8 +44,7 @@ public class BaseActivity extends FragmentActivity implements HttpCallBack{
 		MobclickAgent.updateOnlineConfig(BaseActivity.this);
 		//注册听云服务
 		NBSAppAgent.setLicenseKey(getResources().getString(R.string.tingyun_id)).withLocationServiceEnabled(true).start(this);
-//		initIssUpLocal();
-//		getLocalOrderDBManager();
+
 	}
 
 	public void changeEquipment(EditText edit,boolean boo) {
@@ -109,17 +108,7 @@ public class BaseActivity extends FragmentActivity implements HttpCallBack{
 		HttpManager.requestGET(this,url,this);
 	}
 
-//	/**
-//	 * 初始化本地订单数据库管理
-//	 */
-//	protected LocalOrderDBManager getLocalOrderDBManager() {
-//		// TODO Auto-generated method stub
-//		if(loDBManager == null){
-//			loDBManager = ((application) getApplication()).
-//					getLocalOrderDBManager(this);
-//		}
-//		return loDBManager;
-//	}
+
 
 	public void isInternet(Context context) {
 		if (!IsNetWork.IsHaveInternet(context)) {
@@ -232,14 +221,6 @@ public class BaseActivity extends FragmentActivity implements HttpCallBack{
 		// TODO Auto-generated method stub
 		
 	}
-	
-//	private void initIssUpLocal() {
-//		// TODO Auto-generated method stub
-//		if(issuplocal == null){
-//			issuplocal = SharedPreferencesUtils.getParam(
-//					this.getApplicationContext(), "zld_config", "issuplocal", "");
-//			Log.e("isLocal","BaseActivity initIssUpLocal get issuplocal "+issuplocal);
-//		}
-//	}
+
 }
 

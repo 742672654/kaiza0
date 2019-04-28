@@ -42,10 +42,10 @@ public class application extends Application {
 		super.onCreate();
 
 		//错误日志 保存本地
-		initImageLoader();
-		CrashHandler crashHandler = CrashHandler.getInstance();
-		crashHandler.init(getApplicationContext());
-		sInstance = this;
+//		initImageLoader();
+//		CrashHandler crashHandler = CrashHandler.getInstance();
+//		crashHandler.init(getApplicationContext());
+//		sInstance = this;
 	}
 	public static Context getAppContext() {
 		return sInstance;

@@ -1,6 +1,8 @@
 package com.vz;
 import android.util.Log;
 
+import java.io.UnsupportedEncodingException;
+
 public class tcpsdk {
 	
 	private static tcpsdk  m_tcpsdk = null;
@@ -76,7 +78,7 @@ public class tcpsdk {
 	public interface OnDataReceiver {
 		
 		void onDataReceive(int handle,PlateResult plateResult,int uNumPlates,int eResultType,
-				byte[] pImgFull,int nFullSize, byte[] pImgPlateClip,int nClipSize  );
+				byte[] pImgFull,int nFullSize, byte[] pImgPlateClip,int nClipSize  ) throws UnsupportedEncodingException;
 //		void onDataReceive(int handle,byte[] szPlateData,int plateLength,int plateConfidence,int plateType,byte[] bdTimeData,int timeLength,
 //				byte[] pImgFull,int nFullSize, byte[] pImgPlateClip,int nClipSize);
 		

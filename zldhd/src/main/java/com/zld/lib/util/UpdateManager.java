@@ -108,7 +108,7 @@ public class UpdateManager {
 					pd.dismiss();
 					if (mContext.getClass().equals(HelloActivity.class)) {
 						HelloActivity activity = (HelloActivity) mContext;
-						activity.loadMainUI();
+
 					}
 				}
 			});
@@ -121,7 +121,7 @@ public class UpdateManager {
 					pd.dismiss();
 					if (mContext.getClass().equals(HelloActivity.class)) {
 						HelloActivity activity = (HelloActivity) mContext;
-						activity.loadMainUI();
+
 					}
 				}
 			});
@@ -151,7 +151,7 @@ public class UpdateManager {
 					if (checkIfDownloaded(file, lastModified, length)) {
 						if (mContext.getClass().equals(HelloActivity.class)) {
 							HelloActivity activity = (HelloActivity) mContext;
-							activity.loadMainUI();
+
 						}
 						return file;
 					}

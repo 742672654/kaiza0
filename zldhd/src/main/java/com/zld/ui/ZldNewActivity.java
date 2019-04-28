@@ -31,9 +31,6 @@ import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.gongnen.CameraTimerService;
-import com.gongnen.HttpURLConnectionUtil;
-import com.gongnen.taigan;
-import com.qy.led.model2.LedThread;
 import com.vz.PlateResult;
 import com.vz.tcpsdk;
 import com.vzvison.database.DeviceInfoTable;
@@ -90,9 +87,6 @@ import com.zld.service.PollingService;
 import com.zld.service.ShareUiService;
 import com.zld.view.LineLocalRestartDialog;
 import com.zld.view.RestartDialog;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.File;
 import java.io.IOException;

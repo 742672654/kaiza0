@@ -64,7 +64,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.zld.ui.HelloActivity"
+            android:name="com.cz.activity.LoginActivity"
             android:label="@string/app_name"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.Start" >
@@ -74,6 +74,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+
+        <activity
+            android:name="com.gongnen.Cesi2Activity"
+            android:label="@string/BackgroundActivity"
+            android:screenOrientation="landscape" >
+        </activity>
+
+
+
         <activity
             android:name="com.zld.ui.ZldNewActivity"
             android:screenOrientation="landscape" >
@@ -82,10 +93,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.zld.ui.LoginActivity"
-            android:label="@string/loginActivity"
-            android:screenOrientation="landscape" >
-        </activity>
+        android:name="com.zld.ui.LoginActivity"
+        android:label="@string/loginActivity"
+        android:screenOrientation="landscape" >
+    </activity>
         <activity
             android:name="com.vzvison.MainActivity"
             android:screenOrientation="landscape" >
@@ -102,11 +113,17 @@
             android:name="com.zld.ui.BaseActivity"
             android:screenOrientation="landscape" >
         </activity>
+
+
         <activity
             android:name="com.zld.ui.BackgroundActivity"
             android:label="@string/BackgroundActivity"
             android:screenOrientation="landscape" >
         </activity>
+
+
+
+
         <!-- 开机启动广播事件 -->
         <receiver android:name="com.zld.receiver.StartupReceiver" >
             <intent-filter>
