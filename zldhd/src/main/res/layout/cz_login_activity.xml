@@ -4,6 +4,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
+    <!-- visibility="gone"不可见不占用位置，版本号  -->
+    <EditText
+        android:id="@+id/cz_edition"
+        android:layout_width="360dp"
+        android:layout_height="70dip"
+        android:inputType="number"
+        android:maxLength="32"
+        android:singleLine="true"
+        android:text="1.0"
+        android:visibility="gone"
+        android:textCursorDrawable="@null"
+        tools:text="1.0" />
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -27,6 +41,7 @@
                 android:padding="5dip"
                 android:textColor="#ffffff"
                 android:textSize="16sp" />
+
 
 
             <EditText

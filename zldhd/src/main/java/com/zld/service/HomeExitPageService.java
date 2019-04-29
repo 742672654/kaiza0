@@ -10,7 +10,7 @@ import android.os.Message;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.gongnen.http.HttpURLConnectionUtil;
+import com.cz.http.HttpURLConnectionUtil;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.zld.application;

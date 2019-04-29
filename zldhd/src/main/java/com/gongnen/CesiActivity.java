@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.gongnen.http.HttpCallBack2;
+import com.cz.http.HttpCallBack2;
 import com.zld.R;
 import com.zld.ui.ZldNewActivity;
 

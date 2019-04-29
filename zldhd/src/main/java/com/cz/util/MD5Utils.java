@@ -1,20 +1,14 @@
-package com.zld.lib.util;
+package com.cz.util;
 
 import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
 public class MD5Utils {
 
 	/**
 	 * 生成MD5
 	 */
-	public static String MD5(String s){
-		MessageDigest messagedigest = null;
-		try {
-			messagedigest = MessageDigest.getInstance("MD5");
-		} catch (NoSuchAlgorithmException e) {
-			e.printStackTrace();
-		}
+	public static String MD5(String s) throws Exception {
+		MessageDigest messagedigest = MessageDigest.getInstance("MD5");
 		messagedigest.reset();
 		byte abyte0[] = messagedigest.digest(s.getBytes());
 		return byteToString(abyte0);

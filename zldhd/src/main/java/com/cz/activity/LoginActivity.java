@@ -1,29 +1,35 @@
 package com.cz.activity;
 
 
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
+import com.Static_bean;
+import com.cz.bean.LoginUserBean;
+import com.cz.http.HttpCallBack2;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
-import com.cz.bean.UserBean;
-import com.cz.db.User_DB;
-import com.gongnen.http.HttpCallBack2;
+import com.cz.db.LoginUser_DB;
+import com.cz.http.HttpManager2;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.zld.R;
+import com.zld.bean.InformationBean;
+
+import java.util.List;
 
 
-public class LoginActivity extends FragmentActivity implements HttpCallBack2 , View.OnClickListener{
+public class LoginActivity extends FragmentActivity implements HttpCallBack2, View.OnClickListener{
 
 
-	EditText login_account;
-	EditText login_password;
-	EditText login_ip;
-	User_DB user_DB;
+	EditText login_account_EditText;
+	EditText login_password_EditText;
+	EditText login_ip_EditText;
+	EditText edition_EditText;
+
+
+	LoginUser_DB loginUser_DB;
 
 
 
@@ -35,11 +41,13 @@ public class LoginActivity extends FragmentActivity implements HttpCallBack2 , V
 		Button button2 = (Button)findViewById(R.id.cz_bt_longin_login);
 		button2.setOnClickListener(this);
 
-		login_account = (EditText) findViewById(R.id.cz_login_account);
-		login_password = (EditText) findViewById(R.id.cz_login_password);
-		login_ip = (EditText) findViewById(R.id.cz_login_ip);
+		login_account_EditText = (EditText) findViewById(R.id.cz_login_account);
+		login_password_EditText = (EditText) findViewById(R.id.cz_login_password);
+		login_ip_EditText = (EditText) findViewById(R.id.cz_login_ip);
+		edition_EditText = (EditText) findViewById(R.id.cz_edition);
 
-		user_DB=new User_DB(this,"tcc_user.db",null,1);
+
+		loginUser_DB=new LoginUser_DB(this,"tcc_user.db",null,1);
 
 	}
 
@@ -48,14 +56,29 @@ public class LoginActivity extends FragmentActivity implements HttpCallBack2 , V
 	@Override
 	public void onClick(View v) {
 
+        	if(v.getId()!=R.id.cz_bt_longin_login){return; }
 
+            String account = login_account_EditText.getText().toString();
+            String password = login_password_EditText.getText().toString();
+            String ip = login_ip_EditText.getText().toString();
+			int edition = Integer.parseInt(edition_EditText.getText().toString());
 
+			loginUser_DB=new LoginUser_DB(this,"tcc_loginuser.db",null,1);
 
-		user_DB.insert_LocalUser(new UserBean("acc01","pass01","ip01"));
+            StringBuffer param = new StringBuffer();
+				param.append("account=").append(account);
+				param.append("&password=").append(password);
+				param.append("&edition=").append(edition);
+				param.append("&out=json");
 
-		user_DB.update_LocalUser(new UserBean("acc02","pass02","ip02"));
-		user_DB.query_LocalUser();
-		Toast.makeText(this,user_DB.query_LocalUser().toString(),Toast.LENGTH_LONG).show();
+			String  result = HttpManager2.requestPOSTsynchro(Static_bean.login,param.toString());
+
+			LoginUserBean loginUserBean = new Gson().fromJson(result, LoginUserBean.class);
+
+	}
+
+	public void login(String url, String object, String sign) {
+
 	}
 
 
@@ -69,5 +92,4 @@ public class LoginActivity extends FragmentActivity implements HttpCallBack2 , V
 	public void onResponsePOST(String url, String object, String sign) {
 
 	}
-
 }
