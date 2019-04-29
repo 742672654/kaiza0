@@ -1,29 +1,22 @@
-package com.cz.bean;
+package com.cz.db;
 
 public class LoginUserBean {
-
-    private String uuid; //仅仅是在存日志的时候使用
 
     private String account;
     private String password;
     private String ip;
-    private double edition; //版本号
-
     private String login_time;
     private String out_time;
 
 
-
-
-
-
     public LoginUserBean(){};
 
-    public LoginUserBean(String account0, String password0, String ip0,int edition0) {
+    public LoginUserBean(String account0, String password0, String ip0,String login_time0,String out_time0) {
         this.account = account0;
         this.password = password0;
         this.ip = ip0;
-        this.edition=edition0;
+        this.login_time=login_time0;
+        this.out_time=out_time0;
     }
 
     public String getAccount() {
@@ -56,27 +49,15 @@ public class LoginUserBean {
     public void setOut_time(String out_time) {
         this.out_time = out_time;
     }
-    public String getUuid() {
-        return uuid;
-    }
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
-    }
-    public double getEdition() {
-        return edition;
-    }
-    public void setEdition(double edition) {
-        this.edition = edition;
-    }
+
+
 
     @Override
     public String toString() {
         return "UserBean{" +
-                "uuid='" + uuid + '\'' +
                 ", account='" + account + '\'' +
                 ", password='" + password + '\'' +
                 ", ip='" + ip + '\'' +
-                ", edition=" + edition +
                 ", login_time='" + login_time + '\'' +
                 ", out_time='" + out_time + '\'' +
                 '}';

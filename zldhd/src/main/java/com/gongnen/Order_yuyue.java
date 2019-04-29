@@ -20,7 +20,7 @@ public class Order_yuyue {
             buffer2.append("comid=").append(AppInfo.getInstance().getComid());
             buffer2.append("&plateText=").append(plateText);
 
-            String  s2 = HttpURLConnectionUtil.doPOST(Constant.requestUrl+Constant.Isyuyue_URL, buffer2.toString());
+            String  s2 = "";
             JSONObject jsonObject2 = new JSONObject(s2);
 
             if (jsonObject2.getInt("reserve") > 0) {
@@ -41,7 +41,7 @@ public class Order_yuyue {
 
         try {
 
-            String  s1 = HttpURLConnectionUtil.doPOST( Constant.requestUrl+Constant.WhitelistSurplus_URL,buffer.toString());
+            String  s1 = "";
             JSONObject jsonObject = new JSONObject(s1);
             number = jsonObject.getInt("number");
 
@@ -72,7 +72,7 @@ public class Order_yuyue {
 
             Log.v("拍照","地址"+s2+"；发送值"+buffer2.toString());
 
-              s2 = HttpURLConnectionUtil.doPOST(Constant.requestUrl+Constant.Reserve_URL,buffer2.toString());
+              s2 = "";
 
             Log.v("拍照","返回值"+s2);
             JSONObject jsonObject2 = new JSONObject(s2);

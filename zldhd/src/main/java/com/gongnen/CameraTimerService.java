@@ -36,23 +36,6 @@ public class CameraTimerService extends Service {
         super.onCreate();
 
 
-            // 获取当前停车场的IP
-            new Thread(){
-                public void run(){
-
-                    StringBuffer buffer = new StringBuffer("comid=").append(AppInfo.getInstance().getComid());
-                    String jsonList = new HttpURLConnectionUtil().doPOST(Constant.requestUrl+Constant.WhitelistInformation_URL, buffer.toString());
-
-                    Gson gson1=new Gson();
-                    List<InformationBean> list= gson1.fromJson(jsonList, new TypeToken<List<InformationBean>>() {}.getType());
-
-                    PARKING_ip_Bean.PARKING_ip=list;
-
-                    Log.v("拍照监听--",PARKING_ip_Bean.PARKING_ip.toString());
-
-                }
-            }.start();
-
     }
 
 

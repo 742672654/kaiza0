@@ -1,4 +1,4 @@
-package com.gongnen;
+package com.cz.util;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -17,22 +17,22 @@ public class TimeUtil {
 	private static final SimpleDateFormat DATE = new SimpleDateFormat("yyyy-MM-dd");
 	private static final SimpleDateFormat TIME = new SimpleDateFormat("HH:mm:ss");
 	private static final SimpleDateFormat WEEK = new SimpleDateFormat("EEEE");
-
-
+	
+	
 	/**
 	 *返回当前时间戳
 	 */
 	public static long getCurrentTime() {
-
+		
 		return new Date().getTime();
 	}
-
+	
 	/**
 	 *获取当前时间
 	 *格式：HH:mm:ss
 	 */
 	public static String getTime() {
-
+		 
 		return TIME.format(new Date());
 	}
 	/**
@@ -40,7 +40,7 @@ public class TimeUtil {
 	 *格式：HH:mm:ss
 	 */
 	public static String getTime(Date date) {
-
+		 
 		return TIME.format( date );
 	}
 	/**
@@ -48,7 +48,7 @@ public class TimeUtil {
 	 *格式：yyyy-MM-dd
 	 */
 	public static String getDate() {
-
+		 
 		return DATE.format(new Date());
 	}
 	/**
@@ -56,7 +56,7 @@ public class TimeUtil {
 	 *格式：yyyy-MM-dd
 	 */
 	public static String getDate(Date date) {
-
+		 
 		return DATE.format( date );
 	}
 	/**
@@ -64,14 +64,14 @@ public class TimeUtil {
 	 *格式：yyyy-MM-dd HH:mm:ss
 	 */
 	public static String getDateTime() {
-
+	 
 		return DATE_TIME.format(new Date());
 	}
 	/**
 	 *获取当前星期
 	 */
 	public static String getWeek() {
-
+ 
 		return WEEK.format( new Date() );
 	}
 	/**
@@ -143,7 +143,7 @@ public class TimeUtil {
 		return latwek;
 	}
 
-
+	
 
 
 	/**
@@ -197,9 +197,9 @@ public class TimeUtil {
 	 *返回指定日期是星期几
 	 */
 	public static int dayForWeek(Date pTime) {
-
+ 
 		Calendar c = Calendar.getInstance();
-		c.setTime( (pTime));
+		  		 c.setTime( (pTime));
 		int dayForWeek = 0;
 		if (c.get(Calendar.DAY_OF_WEEK) == 1) {
 			dayForWeek = 7;
@@ -208,8 +208,8 @@ public class TimeUtil {
 		}
 		return dayForWeek;
 	}
-
-
+	
+	
 	/**
 	 *现在的时间加几天
 	 */
@@ -220,7 +220,7 @@ public class TimeUtil {
 		return ca.getTime();
 	}
 
-
+	
 	/**
 	 *现在的时间加几分钟
 	 */
@@ -230,43 +230,43 @@ public class TimeUtil {
 		ca.add(Calendar.MINUTE, min);// num为增加的分钟，可以改变的
 		return ca.getTime();
 	}
-
+	
 	/**
 	 *两个时间相差多少
 	 */
 	public static String getDatePoor(Date endDate, Date nowDate) {
-
-		long nd = 1000 * 24 * 60 * 60;
-		long nh = 1000 * 60 * 60;
-		long nm = 1000 * 60;
-		// long ns = 1000;
-		// 获得两个时间的毫秒时间差异
-		long diff = endDate.getTime() - nowDate.getTime();
-		// 计算差多少天
-		long day = diff / nd;
-		// 计算差多少小时
-		long hour = diff % nd / nh;
-		// 计算差多少分钟
-		long min = diff % nd % nh / nm;
-		// 计算差多少秒//输出结果
-		// long sec = diff % nd % nh % nm / ns;
-		return day + "天" + hour + "小时" + min + "分钟";
+		 
+	    long nd = 1000 * 24 * 60 * 60;
+	    long nh = 1000 * 60 * 60;
+	    long nm = 1000 * 60;
+	    // long ns = 1000;
+	    // 获得两个时间的毫秒时间差异
+	    long diff = endDate.getTime() - nowDate.getTime();
+	    // 计算差多少天
+	    long day = diff / nd;
+	    // 计算差多少小时
+	    long hour = diff % nd / nh;
+	    // 计算差多少分钟
+	    long min = diff % nd % nh / nm;
+	    // 计算差多少秒//输出结果
+	    // long sec = diff % nd % nh % nm / ns;
+	    return day + "天" + hour + "小时" + min + "分钟";
 	}
-
-
+	
+	
 	/**
 	 *两个时间相差多少分钟
 	 */
 	public static long getDatePoorMin(Date endDate, Date nowDate) {
-
-		long nd = 1000 * 24 * 60 * 60;
-		long nh = 1000 * 60 * 60;
-		long nm = 1000 * 60;
-		// long ns = 1000;
-		// 获得两个时间的毫秒时间差异
-		long diff = endDate.getTime() - nowDate.getTime();
-		// 计算差多少分钟
-		long min = diff % nd % nh / nm;
-		return  min;
+		 
+	    long nd = 1000 * 24 * 60 * 60;
+	    long nh = 1000 * 60 * 60;
+	    long nm = 1000 * 60;
+	    // long ns = 1000;
+	    // 获得两个时间的毫秒时间差异
+	    long diff = endDate.getTime() - nowDate.getTime();
+	    // 计算差多少分钟
+	    long min = diff % nd % nh / nm;
+	    return  min;
 	}
 }

@@ -33,7 +33,7 @@ public class RelativeLayoutActicity extends BaseActivity implements View.OnClick
     public void onClick(View v) {
 
 
-        HttpManager2.requestPOSTsynchro("http://tm.banxie.net:30002/collectorApi/orderhistory","");
+        //HttpManager2.requestPOSTsynchro("http://tm.banxie.net:30002/collectorApi/orderhistory","");
     }
 
 

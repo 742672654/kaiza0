@@ -60,7 +60,7 @@ public class HttpURLConnectionUtil {
 	   *@接收  param:"code=001&name=测试"
 	   */
 	  public static String doPOST( String uri, String param ) {
-	    	
+
 		  		return doPOST2( uri, param, null );
 	    }
 
@@ -70,7 +70,7 @@ public class HttpURLConnectionUtil {
 	   *@接收  headers： Map类型 headers头文件
 	   */
 	  public static String doPOST2( String uri, String param, Map<String,String> headers ) {
-	    	
+
 	    	 BufferedReader br = null;
 	        try {
 	            URL url = new URL(uri);
@@ -82,7 +82,7 @@ public class HttpURLConnectionUtil {
 	            connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
 
 	            if( headers!=null && headers.size()>0 ){
-	            for(Entry<String, String> entry : headers.entrySet()) { 
+	            for(Entry<String, String> entry : headers.entrySet()) {
 
 	            	  connection.setRequestProperty(entry.getKey(), entry.getValue());
 	            }
@@ -113,7 +113,7 @@ public class HttpURLConnectionUtil {
 	   *@接收  param格式:{"code":"0","name":"小张","id":"01"}
 	   */
 	  public  String doJSON( String uri, String param ){
-	    	
+
 	    	BufferedReader br = null;
 	        try {
 	            URL url = new URL( uri );

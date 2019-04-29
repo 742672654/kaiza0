@@ -2,37 +2,34 @@ package com.cz.activity;
 
 
 import com.Static_bean;
-import com.cz.bean.LoginUserBean;
+import com.cz.db.LoginUserBean;
+import com.cz.db.User_DB;
 import com.cz.http.HttpCallBack2;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.cz.db.LoginUser_DB;
 import com.cz.http.HttpManager2;
+import com.cz.http.okHttpUtil;
+import com.cz.util.TimeUtil;
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import com.zld.R;
-import com.zld.bean.InformationBean;
-
-import java.util.List;
 
 
 public class LoginActivity extends FragmentActivity implements HttpCallBack2, View.OnClickListener{
-
 
 	EditText login_account_EditText;
 	EditText login_password_EditText;
 	EditText login_ip_EditText;
 	EditText edition_EditText;
 
-
 	LoginUser_DB loginUser_DB;
-
-
-
+	User_DB user_DB;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -46,9 +43,9 @@ public class LoginActivity extends FragmentActivity implements HttpCallBack2, Vi
 		login_ip_EditText = (EditText) findViewById(R.id.cz_login_ip);
 		edition_EditText = (EditText) findViewById(R.id.cz_edition);
 
+		loginUser_DB = new LoginUser_DB(this,"tcc_loginuser.db",null,1);
 
-		loginUser_DB=new LoginUser_DB(this,"tcc_user.db",null,1);
-
+		user_DB = new User_DB(this,"tcc_user.db",null,1);
 	}
 
 
@@ -61,23 +58,28 @@ public class LoginActivity extends FragmentActivity implements HttpCallBack2, Vi
             String account = login_account_EditText.getText().toString();
             String password = login_password_EditText.getText().toString();
             String ip = login_ip_EditText.getText().toString();
-			int edition = Integer.parseInt(edition_EditText.getText().toString());
+			double edition = Double.parseDouble(edition_EditText.getText().toString());
 
-			loginUser_DB=new LoginUser_DB(this,"tcc_loginuser.db",null,1);
+			LoginUserBean loginUserBean = new LoginUserBean(account,password,ip, TimeUtil.getDateTime(),null);
 
-            StringBuffer param = new StringBuffer();
-				param.append("account=").append(account);
-				param.append("&password=").append(password);
-				param.append("&edition=").append(edition);
-				param.append("&out=json");
-
-			String  result = HttpManager2.requestPOSTsynchro(Static_bean.login,param.toString());
-
-			LoginUserBean loginUserBean = new Gson().fromJson(result, LoginUserBean.class);
-
+			login(loginUserBean,edition,2);
 	}
 
-	public void login(String url, String object, String sign) {
+	/**
+	 * @param loginUserBean
+	 * @param type:1是手动登录，2是自动登录
+	 */
+	public void login(LoginUserBean loginUserBean,double edition,int type) {
+
+
+		StringBuffer param = new StringBuffer();
+		param.append("account=").append(loginUserBean.getAccount());
+		param.append("&password=").append(loginUserBean.getPassword());
+		param.append("&edition=").append(edition);
+		param.append("&type=").append(type);
+		param.append("&out=json");
+
+		new okHttpUtil().doPost(this);
 
 	}
 
@@ -86,10 +88,24 @@ public class LoginActivity extends FragmentActivity implements HttpCallBack2, Vi
 	@Override
 	public void onResponseGET(String url, String object, String sign) {
 
+		Log.i("",object);
 	}
 
 	@Override
-	public void onResponsePOST(String url, String object, String sign) {
+	public void onResponsePOST(String url, final String object, String sign) {
 
+		Log.i("AAAA",object+"-------------");
+
+
+		final LoginUserBean loginBean = (LoginUserBean)new Gson().fromJson(object, LoginUserBean.class);
+
+		LoginActivity.this.runOnUiThread(new Runnable() {
+			@Override
+			public void run() {
+
+
+				Toast.makeText( LoginActivity.this,loginBean.toString(),Toast.LENGTH_SHORT ).show();
+			}
+		});
 	}
 }

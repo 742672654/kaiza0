@@ -335,7 +335,7 @@ public class HomeExitPageService extends BaseService {
             public void run(){
 
                 StringBuffer buffer = new StringBuffer("comid=").append(comid);
-                String jsonList = new HttpURLConnectionUtil().doPOST("http://47.111.11.222:8081/zld/whitelist.do?action=information", buffer.toString());
+                String jsonList = "";//new HttpURLConnectionUtil().doPOST("http://47.111.11.222:8081/zld/whitelist.do?action=information", buffer.toString());
 
                 List<InformationBean> list= new Gson().fromJson(jsonList, new TypeToken<List<InformationBean>>() {}.getType());
                 PARKING_ip_Bean.PARKING_ip=list;
