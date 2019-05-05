@@ -1,91 +1,91 @@
 package com.cz.db;
 
-import android.content.Context;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 
-public class User_DB extends SQLiteOpenHelper {
+import com.cz.bean.UserBean;
+
+public class User_DB {
 
     private final static String TAG = "User_DB";
 
-    public static final String CREATE_TEBLE = "create table tcc_loginuser(account text,account text, logontime text,qr text,role text,iscancel text,notemsg text)";
+    public static void insert_User( UserBean userBean ){
 
+        deleteUser(userBean);
+        StringBuffer buf = new StringBuffer("insert into user( account,password,logontime,qr,role,iscancel,notemsg ,mobile ,")
+                .append("cname ,nfc ,token ,authflag , etc ,swipe ,name ,isshowepay ,comid ,state ,info,uptime)");
+            buf.append("values('").append(userBean.getAccount()).append("',");
+            buf.append("'").append(userBean.getPassword()).append("',");
+            buf.append("'").append(userBean.getLogontime()).append("',");
+            buf.append("'").append(userBean.getQr()).append("',");
+            buf.append("'").append(userBean.getRole()).append("',");
+            buf.append("'").append(userBean.getIscancel()).append("',");
+            buf.append("'").append(userBean.getNotemsg()).append("',");
+            buf.append("'").append(userBean.getMobile()).append("',");
+            buf.append("'").append(userBean.getCname()).append("',");
+            buf.append("'").append(userBean.getNfc()).append("',");
+            buf.append("'").append(userBean.getToken()).append("',");
+            buf.append("'").append(userBean.getAuthflag()).append("',");
+            buf.append("'").append(userBean.getEtc()).append("',");
+            buf.append("'").append(userBean.getSwipe()).append("',");
+            buf.append("'").append(userBean.getName()).append("',");
+            buf.append("'").append(userBean.getIsshowepay()).append("',");
+            buf.append("'").append(userBean.getComid()).append("',");
+            buf.append("'").append(userBean.getState()).append("',");
+            buf.append("'").append(userBean.getInfo()).append("',");
+            buf.append("'").append(userBean.getUptime()).append("');");
+        BaseSQL_DB.baseSQL_DB.getWritableDatabase().execSQL(buf.toString());
+    }
+    public static void deleteUser(UserBean userBean){
 
+        try{
 
-    public void insert_LocalLoginUser( LoginUserBean userBean ){
-        deleteAll_LocalUser();
+            StringBuffer buf = new StringBuffer(" delete from user where account = '").append(userBean.getAccount()).append("'; ");
+            BaseSQL_DB.baseSQL_DB.getWritableDatabase().execSQL( buf.toString() );
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
-        StringBuffer buf = new StringBuffer("insert into tcc_user(account, password, ip, login_time, out_time)");
-        buf.append("values('").append(userBean.getAccount()).append("',");
-        buf.append("'").append(userBean.getPassword()).append("',");
-        buf.append("'").append(userBean.getIp()).append("',");
-        buf.append("'").append(userBean.getLogin_time()).append("',");
-        buf.append("'").append(userBean.getOut_time()).append("');");
-        getWritableDatabase().execSQL(buf.toString());
     }
 
-    public void deleteAll_LocalUser(){
+    public static void deleteAll_User(){
 
-        getWritableDatabase().execSQL("delete from tcc_user where 1=1;");
+        BaseSQL_DB.baseSQL_DB.getWritableDatabase().execSQL("delete from user where 1=1;");
     }
 
-    public void update_LocalLoginUser( LoginUserBean userBean ){
+    public static void update_User( UserBean userBean ){
 
-        deleteAll_LocalUser();
-        insert_LocalLoginUser( userBean );
+        deleteUser( userBean );
+        insert_User( userBean );
     }
 
-    public LoginUserBean query_LocalLoginUser(){
+    public static UserBean query_User(String account){
 
         Cursor cursor = null;
         try {
 
-            cursor = this.getWritableDatabase().rawQuery("select * from tcc_user", null);
+            String buf = new StringBuffer(" select * from user where account = '").append(account).append("'; ").toString();
+            cursor = BaseSQL_DB.baseSQL_DB.getWritableDatabase().rawQuery(buf , null);
             cursor.moveToFirst();
 
-            LoginUserBean userBean = new LoginUserBean();
-            userBean.setAccount(cursor.getString(cursor.getColumnIndex("account")));
-            userBean.setPassword(cursor.getString(cursor.getColumnIndex("password")));
-            userBean.setIp(cursor.getString(cursor.getColumnIndex("ip")));
-            userBean.setLogin_time(cursor.getString(cursor.getColumnIndex("login_time")));
-            userBean.setOut_time(cursor.getString(cursor.getColumnIndex("out_time")));
+            UserBean userBean = new UserBean();
+                userBean.setAccount(cursor.getString(cursor.getColumnIndex("account")));
+                userBean.setPassword(cursor.getString(cursor.getColumnIndex("password")));
+                userBean.setRole(cursor.getString(cursor.getColumnIndex("role")));
+                userBean.setCname(cursor.getString(cursor.getColumnIndex("cname")));
+                userBean.setToken(cursor.getString(cursor.getColumnIndex("token")));
+                userBean.setName(cursor.getString(cursor.getColumnIndex("name")));
+                userBean.setComid(cursor.getString(cursor.getColumnIndex("comid")));
+                userBean.setState(cursor.getString(cursor.getColumnIndex("state")));
+                userBean.setUptime(cursor.getString(cursor.getColumnIndex("uptime")));
 
             return userBean;
         }catch ( Exception e){
-
             e.printStackTrace();
             return null;
         }finally {
-            if (cursor!=null){ cursor.close(); }
+            try { if (cursor!=null){ cursor.close(); } }catch ( Exception e){ }
         }
     }
-
-
-
-
-
-
-    // TODO: 下面是默认构造方法
-    public User_DB(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
-    }
-
-
-    @Override   // TODO: 创建数据库
-    public void onCreate(SQLiteDatabase sqLiteDatabase) {
-
-        sqLiteDatabase.execSQL(CREATE_TEBLE);
-    }
-
-
-    @Override   // TODO: 数据库不存在就创建
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
-
-        sqLiteDatabase.execSQL(" drop table if exists tcc_user");
-        onCreate(sqLiteDatabase);
-    }
-
 
 
 }

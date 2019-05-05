@@ -11,6 +11,7 @@ import com.cz.http.HttpManager2;
 import com.zld.R;
 import com.zld.ui.BaseActivity;
 
+import java.util.Map;
 
 
 public class RelativeLayoutActicity extends BaseActivity implements View.OnClickListener, HttpCallBack2 {
@@ -37,20 +38,18 @@ public class RelativeLayoutActicity extends BaseActivity implements View.OnClick
     }
 
 
-
-
     @Override
-    public void onResponseGET(String url, String object, String sign) {
-
-        Log.i(TAG,"点了一下");
-
-        Intent intent = new Intent(RelativeLayoutActicity.this, Cesi2Activity.class);
-        RelativeLayoutActicity.this.startActivity(intent);
+    public void onResponseGET(String url, String param, String sign, String object) {
 
     }
 
     @Override
-    public void onResponsePOST(String url, String object, String sign) {
+    public void onResponsePOST(String url, Map<String, String> param, String sign, String object) {
+
+    }
+
+    @Override
+    public void onResponseFile(String url, Map<String, String> param, String sign, String object) {
 
     }
 }

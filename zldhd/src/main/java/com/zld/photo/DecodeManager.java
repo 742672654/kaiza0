@@ -43,6 +43,6 @@ public class DecodeManager {
 	public native String getOneImg(String ip);
 	
 	public native int getConfidenceLevel();
-	
+	//设置相机的置信度
 	public native void setConfidenceLevel(int level);
 }

@@ -12,6 +12,8 @@ import com.cz.http.HttpCallBack2;
 import com.zld.R;
 import com.zld.ui.ZldNewActivity;
 
+import java.util.Map;
+
 
 public class CesiActivity extends AppCompatActivity implements View.OnClickListener, HttpCallBack2 {
 
@@ -49,17 +51,20 @@ public class CesiActivity extends AppCompatActivity implements View.OnClickListe
 
 
     @Override
-    public void onResponseGET(String url, String object, String sign) {
-
-    }
-
-    @Override
-    public void onResponsePOST(String url, String object, String sign) {
-
+    public void onResponseGET(String url, String param, String sign, String object) {
         Intent intent = new Intent(this, ZldNewActivity.class);
 
         this.startActivity(intent);
 
+    }
+
+    @Override
+    public void onResponsePOST(String url, Map<String, String> param, String sign, String object) {
+
+    }
+
+    @Override
+    public void onResponseFile(String url, Map<String, String> param, String sign, String object) {
 
     }
 }

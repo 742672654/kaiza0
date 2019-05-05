@@ -1,6 +1,6 @@
 package com.cz.db;
 
-public class LoginUserBean {
+public class LoginUser_Bean {
 
     private String account;
     private String password;
@@ -9,9 +9,9 @@ public class LoginUserBean {
     private String out_time;
 
 
-    public LoginUserBean(){};
+    public LoginUser_Bean(){};
 
-    public LoginUserBean(String account0, String password0, String ip0,String login_time0,String out_time0) {
+    public LoginUser_Bean(String account0, String password0, String ip0,String login_time0,String out_time0) {
         this.account = account0;
         this.password = password0;
         this.ip = ip0;

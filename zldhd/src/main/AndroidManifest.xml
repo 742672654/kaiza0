@@ -110,6 +110,14 @@
             android:windowSoftInputMode="adjustUnspecified|stateHidden" >
         </activity>
         <activity
+            android:name="com.cz.activity.ChooseWorkstation2Activity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/ChooseWorkstationActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/Transparent"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" >
+        </activity>
+        <activity
             android:name="com.zld.ui.BaseActivity"
             android:screenOrientation="landscape" >
         </activity>
